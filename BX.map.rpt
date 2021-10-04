@@ -1,0 +1,728 @@
+Analysis & Synthesis report for BX
+Fri Dec 06 16:56:24 2019
+Quartus II Version 7.2 Build 151 09/26/2007 SJ Full Version
+
+
+---------------------
+; Table of Contents ;
+---------------------
+  1. Legal Notice
+  2. Analysis & Synthesis Summary
+  3. Analysis & Synthesis Settings
+  4. Analysis & Synthesis Source Files Read
+  5. Analysis & Synthesis Resource Usage Summary
+  6. Analysis & Synthesis Resource Utilization by Entity
+  7. State Machine - |main|mo:inst19|PRESENTSTATE
+  8. User-Specified and Inferred Latches
+  9. Registers Removed During Synthesis
+ 10. General Register Statistics
+ 11. Inverted Register Statistics
+ 12. Multiplexer Restructuring Statistics (Restructuring Performed)
+ 13. Analysis & Synthesis Messages
+
+
+
+----------------
+; Legal Notice ;
+----------------
+Copyright (C) 1991-2007 Altera Corporation
+Your use of Altera Corporation's design tools, logic functions 
+and other software and tools, and its AMPP partner logic 
+functions, and any output files from any of the foregoing 
+(including device programming or simulation files), and any 
+associated documentation or information are expressly subject 
+to the terms and conditions of the Altera Program License 
+Subscription Agreement, Altera MegaCore Function License 
+Agreement, or other applicable license agreement, including, 
+without limitation, that your use is for the sole purpose of 
+programming logic devices manufactured by Altera and sold by 
+Altera or its authorized distributors.  Please refer to the 
+applicable agreement for further details.
+
+
+
++--------------------------------------------------------------------------+
+; Analysis & Synthesis Summary                                             ;
++-------------------------------+------------------------------------------+
+; Analysis & Synthesis Status   ; Successful - Fri Dec 06 16:56:24 2019    ;
+; Quartus II Version            ; 7.2 Build 151 09/26/2007 SJ Full Version ;
+; Revision Name                 ; BX                                       ;
+; Top-level Entity Name         ; main                                     ;
+; Family                        ; Stratix II                               ;
+; Logic utilization             ; N/A                                      ;
+;     Combinational ALUTs       ; 454                                      ;
+;     Dedicated logic registers ; 600                                      ;
+; Total registers               ; 600                                      ;
+; Total pins                    ; 143                                      ;
+; Total virtual pins            ; 0                                        ;
+; Total block memory bits       ; 0                                        ;
+; DSP block 9-bit elements      ; 0                                        ;
+; Total PLLs                    ; 0                                        ;
+; Total DLLs                    ; 0                                        ;
++-------------------------------+------------------------------------------+
+
+
++-----------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Settings                                                                                         ;
++-----------------------------------------------------------------------------+--------------------+--------------------+
+; Option                                                                      ; Setting            ; Default Value      ;
++-----------------------------------------------------------------------------+--------------------+--------------------+
+; Top-level entity name                                                       ; main               ; BX                 ;
+; Family name                                                                 ; Stratix II         ; Stratix II         ;
+; Use Generated Physical Constraints File                                     ; Off                ;                    ;
+; Use smart compilation                                                       ; Off                ; Off                ;
+; Maximum processors allowed for parallel compilation                         ; 1                  ; 1                  ;
+; Restructure Multiplexers                                                    ; Auto               ; Auto               ;
+; Create Debugging Nodes for IP Cores                                         ; Off                ; Off                ;
+; Preserve fewer node names                                                   ; On                 ; On                 ;
+; Disable OpenCore Plus hardware evaluation                                   ; Off                ; Off                ;
+; Verilog Version                                                             ; Verilog_2001       ; Verilog_2001       ;
+; VHDL Version                                                                ; VHDL93             ; VHDL93             ;
+; State Machine Processing                                                    ; Auto               ; Auto               ;
+; Safe State Machine                                                          ; Off                ; Off                ;
+; Extract Verilog State Machines                                              ; On                 ; On                 ;
+; Extract VHDL State Machines                                                 ; On                 ; On                 ;
+; Ignore Verilog initial constructs                                           ; Off                ; Off                ;
+; Add Pass-Through Logic to Inferred RAMs                                     ; On                 ; On                 ;
+; Parallel Synthesis                                                          ; Off                ; Off                ;
+; DSP Block Balancing                                                         ; Auto               ; Auto               ;
+; NOT Gate Push-Back                                                          ; On                 ; On                 ;
+; Power-Up Don't Care                                                         ; On                 ; On                 ;
+; Remove Redundant Logic Cells                                                ; Off                ; Off                ;
+; Remove Duplicate Registers                                                  ; On                 ; On                 ;
+; Ignore CARRY Buffers                                                        ; Off                ; Off                ;
+; Ignore CASCADE Buffers                                                      ; Off                ; Off                ;
+; Ignore GLOBAL Buffers                                                       ; Off                ; Off                ;
+; Ignore ROW GLOBAL Buffers                                                   ; Off                ; Off                ;
+; Ignore LCELL Buffers                                                        ; Off                ; Off                ;
+; Ignore SOFT Buffers                                                         ; On                 ; On                 ;
+; Limit AHDL Integers to 32 Bits                                              ; Off                ; Off                ;
+; Optimization Technique -- Stratix II/III/HardCopy II/Stratix II GX/Arria GX ; Balanced           ; Balanced           ;
+; Carry Chain Length -- Stratix II/Stratix III                                ; 70                 ; 70                 ;
+; Auto Carry Chains                                                           ; On                 ; On                 ;
+; Auto Open-Drain Pins                                                        ; On                 ; On                 ;
+; Perform WYSIWYG Primitive Resynthesis                                       ; Off                ; Off                ;
+; Perform gate-level register retiming                                        ; Off                ; Off                ;
+; Allow register retiming to trade off Tsu/Tco with Fmax                      ; On                 ; On                 ;
+; Auto ROM Replacement                                                        ; On                 ; On                 ;
+; Auto RAM Replacement                                                        ; On                 ; On                 ;
+; Auto DSP Block Replacement                                                  ; On                 ; On                 ;
+; Auto Shift Register Replacement                                             ; Auto               ; Auto               ;
+; Auto Clock Enable Replacement                                               ; On                 ; On                 ;
+; Allow Synchronous Control Signals                                           ; On                 ; On                 ;
+; Force Use of Synchronous Clear Signals                                      ; Off                ; Off                ;
+; Auto RAM Block Balancing                                                    ; On                 ; On                 ;
+; Auto RAM to Logic Cell Conversion                                           ; Off                ; Off                ;
+; Auto Resource Sharing                                                       ; Off                ; Off                ;
+; Allow Any RAM Size For Recognition                                          ; Off                ; Off                ;
+; Allow Any ROM Size For Recognition                                          ; Off                ; Off                ;
+; Allow Any Shift Register Size For Recognition                               ; Off                ; Off                ;
+; Ignore translate_off and synthesis_off directives                           ; Off                ; Off                ;
+; Show Parameter Settings Tables in Synthesis Report                          ; On                 ; On                 ;
+; Ignore Maximum Fan-Out Assignments                                          ; Off                ; Off                ;
+; Retiming Meta-Stability Register Sequence Length                            ; 2                  ; 2                  ;
+; PowerPlay Power Optimization                                                ; Normal compilation ; Normal compilation ;
+; HDL message level                                                           ; Level2             ; Level2             ;
+; Suppress Register Optimization Related Messages                             ; Off                ; Off                ;
+; Number of Removed Registers Reported in Synthesis Report                    ; 100                ; 100                ;
+; Clock MUX Protection                                                        ; On                 ; On                 ;
+; Block Design Naming                                                         ; Auto               ; Auto               ;
++-----------------------------------------------------------------------------+--------------------+--------------------+
+
+
++------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Source Files Read                                                                                                         ;
++----------------------------------+-----------------+------------------------------------+------------------------------------------------------+
+; File Name with User-Entered Path ; Used in Netlist ; File Type                          ; File Name with Absolute Path                         ;
++----------------------------------+-----------------+------------------------------------+------------------------------------------------------+
+; BX.vhd                           ; yes             ; User VHDL File                     ; F:/OneDrive/2019组成原理实验/模型机/BX/BX.vhd        ;
+; CX.vhd                           ; yes             ; User VHDL File                     ; F:/OneDrive/2019组成原理实验/模型机/BX/CX.vhd        ;
+; MDR .vhd                         ; yes             ; User VHDL File                     ; F:/OneDrive/2019组成原理实验/模型机/BX/MDR .vhd      ;
+; MAR.vhd                          ; yes             ; User VHDL File                     ; F:/OneDrive/2019组成原理实验/模型机/BX/MAR.vhd       ;
+; ACC.vhd                          ; yes             ; User VHDL File                     ; F:/OneDrive/2019组成原理实验/模型机/BX/ACC.vhd       ;
+; zongxian.vhd                     ; yes             ; User VHDL File                     ; F:/OneDrive/2019组成原理实验/模型机/BX/zongxian.vhd  ;
+; IR.vhd                           ; yes             ; User VHDL File                     ; F:/OneDrive/2019组成原理实验/模型机/BX/IR.vhd        ;
+; Sel2_1.vhd                       ; yes             ; User VHDL File                     ; F:/OneDrive/2019组成原理实验/模型机/BX/Sel2_1.vhd    ;
+; PC.vhd                           ; yes             ; User VHDL File                     ; F:/OneDrive/2019组成原理实验/模型机/BX/PC.vhd        ;
+; M.vhd                            ; yes             ; User VHDL File                     ; F:/OneDrive/2019组成原理实验/模型机/BX/M.vhd         ;
+; ALU.vhd                          ; yes             ; User VHDL File                     ; F:/OneDrive/2019组成原理实验/模型机/BX/ALU.vhd       ;
+; zuheluoji.vhd                    ; yes             ; User VHDL File                     ; F:/OneDrive/2019组成原理实验/模型机/BX/zuheluoji.vhd ;
+; main.bdf                         ; yes             ; User Block Diagram/Schematic File  ; F:/OneDrive/2019组成原理实验/模型机/BX/main.bdf      ;
+; Sel_ACC .vhd                     ; yes             ; User VHDL File                     ; F:/OneDrive/2019组成原理实验/模型机/BX/Sel_ACC .vhd  ;
+; Sel_C.vhd                        ; yes             ; User VHDL File                     ; F:/OneDrive/2019组成原理实验/模型机/BX/Sel_C.vhd     ;
+; SEL_q.vhd                        ; yes             ; User VHDL File                     ; F:/OneDrive/2019组成原理实验/模型机/BX/SEL_q.vhd     ;
++----------------------------------+-----------------+------------------------------------+------------------------------------------------------+
+
+
++-------------------------------------------------------+
+; Analysis & Synthesis Resource Usage Summary           ;
++-----------------------------------------------+-------+
+; Resource                                      ; Usage ;
++-----------------------------------------------+-------+
+; Estimated ALUTs Used                          ; 454   ;
+; Dedicated logic registers                     ; 600   ;
+;                                               ;       ;
+; Estimated ALUTs Unavailable                   ; 147   ;
+;                                               ;       ;
+; Total combinational functions                 ; 454   ;
+; Combinational ALUT usage by number of inputs  ;       ;
+;     -- 7 input functions                      ; 5     ;
+;     -- 6 input functions                      ; 205   ;
+;     -- 5 input functions                      ; 11    ;
+;     -- 4 input functions                      ; 100   ;
+;     -- <=3 input functions                    ; 133   ;
+;                                               ;       ;
+; Combinational ALUTs by mode                   ;       ;
+;     -- normal mode                            ; 415   ;
+;     -- extended LUT mode                      ; 5     ;
+;     -- arithmetic mode                        ; 34    ;
+;     -- shared arithmetic mode                 ; 0     ;
+;                                               ;       ;
+; Estimated ALUT/register pairs used            ; 601   ;
+;                                               ;       ;
+; Total registers                               ; 600   ;
+;     -- Dedicated logic registers              ; 600   ;
+;     -- I/O registers                          ; 0     ;
+;                                               ;       ;
+; Estimated ALMs:  partially or completely used ; 301   ;
+;                                               ;       ;
+; I/O pins                                      ; 143   ;
+; Maximum fan-out node                          ; CP    ;
+; Maximum fan-out                               ; 600   ;
+; Total fan-out                                 ; 4563  ;
+; Average fan-out                               ; 3.81  ;
++-----------------------------------------------+-------+
+
+
++------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Resource Utilization by Entity                                                                                                                                            ;
++----------------------------+-------------------+--------------+-------------------+--------------+---------+-----------+-----------+------+--------------+----------------------+--------------+
+; Compilation Hierarchy Node ; LC Combinationals ; LC Registers ; Block Memory Bits ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; DSP 36x36 ; Pins ; Virtual Pins ; Full Hierarchy Name  ; Library Name ;
++----------------------------+-------------------+--------------+-------------------+--------------+---------+-----------+-----------+------+--------------+----------------------+--------------+
+; |main                      ; 454 (1)           ; 600 (0)      ; 0                 ; 0            ; 0       ; 0         ; 0         ; 143  ; 0            ; |main                ; work         ;
+;    |ACC:inst10|            ; 0 (0)             ; 8 (8)        ; 0                 ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |main|ACC:inst10     ; work         ;
+;    |BX:inst8|              ; 9 (9)             ; 8 (8)        ; 0                 ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |main|BX:inst8       ; work         ;
+;    |CX:inst13|             ; 0 (0)             ; 8 (8)        ; 0                 ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |main|CX:inst13      ; work         ;
+;    |MAR:inst6|             ; 0 (0)             ; 8 (8)        ; 0                 ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |main|MAR:inst6      ; work         ;
+;    |MDR:inst5|             ; 0 (0)             ; 8 (8)        ; 0                 ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |main|MDR:inst5      ; work         ;
+;    |Sel_ACC:inst11|        ; 20 (20)           ; 0 (0)        ; 0                 ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |main|Sel_ACC:inst11 ; work         ;
+;    |Sel_C:inst14|          ; 20 (20)           ; 0 (0)        ; 0                 ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |main|Sel_C:inst14   ; work         ;
+;    |Sel_Data:inst4|        ; 1 (1)             ; 0 (0)        ; 0                 ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |main|Sel_Data:inst4 ; work         ;
+;    |Sel_Q:inst15|          ; 8 (8)             ; 0 (0)        ; 0                 ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |main|Sel_Q:inst15   ; work         ;
+;    |alu:inst12|            ; 30 (30)           ; 0 (0)        ; 0                 ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |main|alu:inst12     ; work         ;
+;    |ir:inst9|              ; 0 (0)             ; 8 (8)        ; 0                 ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |main|ir:inst9       ; work         ;
+;    |mainStore:inst|        ; 280 (280)         ; 520 (520)    ; 0                 ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |main|mainStore:inst ; work         ;
+;    |mo:inst19|             ; 58 (58)           ; 16 (16)      ; 0                 ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |main|mo:inst19      ; work         ;
+;    |pc:inst7|              ; 9 (9)             ; 16 (16)      ; 0                 ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |main|pc:inst7       ; work         ;
+;    |zongxian:inst1|        ; 18 (18)           ; 0 (0)        ; 0                 ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |main|zongxian:inst1 ; work         ;
++----------------------------+-------------------+--------------+-------------------+--------------+---------+-----------+-----------+------+--------------+----------------------+--------------+
+Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
+
+
+Encoding Type:  One-Hot
++------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; State Machine - |main|mo:inst19|PRESENTSTATE                                                                                                                                                                                                                                                                           ;
++------------------+------------------+------------------+------------------+------------------+------------------+------------------+-----------------+-----------------+-----------------+-----------------+-----------------+-----------------+-----------------+-----------------+-----------------+-----------------+
+; Name             ; PRESENTSTATE.s15 ; PRESENTSTATE.s14 ; PRESENTSTATE.s13 ; PRESENTSTATE.s12 ; PRESENTSTATE.s11 ; PRESENTSTATE.s10 ; PRESENTSTATE.s9 ; PRESENTSTATE.s8 ; PRESENTSTATE.s7 ; PRESENTSTATE.s6 ; PRESENTSTATE.s5 ; PRESENTSTATE.s4 ; PRESENTSTATE.s3 ; PRESENTSTATE.s2 ; PRESENTSTATE.s1 ; PRESENTSTATE.s0 ;
++------------------+------------------+------------------+------------------+------------------+------------------+------------------+-----------------+-----------------+-----------------+-----------------+-----------------+-----------------+-----------------+-----------------+-----------------+-----------------+
+; PRESENTSTATE.s0  ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0               ; 0               ; 0               ; 0               ; 0               ; 0               ; 0               ; 0               ; 0               ; 0               ;
+; PRESENTSTATE.s1  ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0               ; 0               ; 0               ; 0               ; 0               ; 0               ; 0               ; 0               ; 1               ; 1               ;
+; PRESENTSTATE.s2  ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0               ; 0               ; 0               ; 0               ; 0               ; 0               ; 0               ; 1               ; 0               ; 1               ;
+; PRESENTSTATE.s3  ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0               ; 0               ; 0               ; 0               ; 0               ; 0               ; 1               ; 0               ; 0               ; 1               ;
+; PRESENTSTATE.s4  ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0               ; 0               ; 0               ; 0               ; 0               ; 1               ; 0               ; 0               ; 0               ; 1               ;
+; PRESENTSTATE.s5  ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0               ; 0               ; 0               ; 0               ; 1               ; 0               ; 0               ; 0               ; 0               ; 1               ;
+; PRESENTSTATE.s6  ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0               ; 0               ; 0               ; 1               ; 0               ; 0               ; 0               ; 0               ; 0               ; 1               ;
+; PRESENTSTATE.s7  ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0               ; 0               ; 1               ; 0               ; 0               ; 0               ; 0               ; 0               ; 0               ; 1               ;
+; PRESENTSTATE.s8  ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0               ; 1               ; 0               ; 0               ; 0               ; 0               ; 0               ; 0               ; 0               ; 1               ;
+; PRESENTSTATE.s9  ; 0                ; 0                ; 0                ; 0                ; 0                ; 0                ; 1               ; 0               ; 0               ; 0               ; 0               ; 0               ; 0               ; 0               ; 0               ; 1               ;
+; PRESENTSTATE.s10 ; 0                ; 0                ; 0                ; 0                ; 0                ; 1                ; 0               ; 0               ; 0               ; 0               ; 0               ; 0               ; 0               ; 0               ; 0               ; 1               ;
+; PRESENTSTATE.s11 ; 0                ; 0                ; 0                ; 0                ; 1                ; 0                ; 0               ; 0               ; 0               ; 0               ; 0               ; 0               ; 0               ; 0               ; 0               ; 1               ;
+; PRESENTSTATE.s12 ; 0                ; 0                ; 0                ; 1                ; 0                ; 0                ; 0               ; 0               ; 0               ; 0               ; 0               ; 0               ; 0               ; 0               ; 0               ; 1               ;
+; PRESENTSTATE.s13 ; 0                ; 0                ; 1                ; 0                ; 0                ; 0                ; 0               ; 0               ; 0               ; 0               ; 0               ; 0               ; 0               ; 0               ; 0               ; 1               ;
+; PRESENTSTATE.s14 ; 0                ; 1                ; 0                ; 0                ; 0                ; 0                ; 0               ; 0               ; 0               ; 0               ; 0               ; 0               ; 0               ; 0               ; 0               ; 1               ;
+; PRESENTSTATE.s15 ; 1                ; 0                ; 0                ; 0                ; 0                ; 0                ; 0               ; 0               ; 0               ; 0               ; 0               ; 0               ; 0               ; 0               ; 0               ; 1               ;
++------------------+------------------+------------------+------------------+------------------+------------------+------------------+-----------------+-----------------+-----------------+-----------------+-----------------+-----------------+-----------------+-----------------+-----------------+-----------------+
+
+
++-----------------------------------------------------------------------------------------------------------+
+; User-Specified and Inferred Latches                                                                       ;
++-----------------------------------------------------+----------------------------+------------------------+
+; Latch Name                                          ; Latch Enable Signal        ; Free of Timing Hazards ;
++-----------------------------------------------------+----------------------------+------------------------+
+; mo:inst19|ALUOP[1]                                  ; mo:inst19|WideOr22         ; yes                    ;
+; mo:inst19|ALUOP[0]                                  ; mo:inst19|WideOr22         ; yes                    ;
+; mo:inst19|SEL_Q[1]                                  ; mo:inst19|WideOr22         ; yes                    ;
+; zongxian:inst1|data[7]                              ; zongxian:inst1|data[7]~32  ; yes                    ;
+; zongxian:inst1|data[6]                              ; zongxian:inst1|data[7]~32  ; yes                    ;
+; zongxian:inst1|data[5]                              ; zongxian:inst1|data[7]~32  ; yes                    ;
+; zongxian:inst1|data[4]                              ; zongxian:inst1|data[4]~27  ; yes                    ;
+; zongxian:inst1|data[3]                              ; zongxian:inst1|data[4]~27  ; yes                    ;
+; zongxian:inst1|data[2]                              ; zongxian:inst1|data[4]~27  ; yes                    ;
+; zongxian:inst1|data[1]                              ; zongxian:inst1|data[4]~27  ; yes                    ;
+; zongxian:inst1|data[0]                              ; zongxian:inst1|data[4]~27  ; yes                    ;
+; mo:inst19|SEL_DATA[1]                               ; mo:inst19|WideOr17         ; yes                    ;
+; mo:inst19|SEL_DATA[0]                               ; mo:inst19|WideOr17         ; yes                    ;
+; mo:inst19|NEXTSTATE.s0_1012                         ; mo:inst19|Selector38       ; yes                    ;
+; mo:inst19|NEXTSTATE.s3_928                          ; mo:inst19|Selector38       ; yes                    ;
+; mo:inst19|NEXTSTATE.s6_844                          ; mo:inst19|Selector38       ; yes                    ;
+; mo:inst19|NEXTSTATE.s1_984                          ; mo:inst19|Selector38       ; yes                    ;
+; mo:inst19|NEXTSTATE.s14_620                         ; mo:inst19|Selector38       ; yes                    ;
+; mo:inst19|NEXTSTATE.s7_816                          ; mo:inst19|Selector38       ; yes                    ;
+; mo:inst19|NEXTSTATE.s8_788                          ; mo:inst19|Selector38       ; yes                    ;
+; mo:inst19|NEXTSTATE.s10_732                         ; mo:inst19|Selector38       ; yes                    ;
+; mo:inst19|NEXTSTATE.s5_872                          ; mo:inst19|Selector38       ; yes                    ;
+; mo:inst19|NEXTSTATE.s13_648                         ; mo:inst19|Selector38       ; yes                    ;
+; mo:inst19|NEXTSTATE.s12_676                         ; mo:inst19|Selector38       ; yes                    ;
+; mo:inst19|NEXTSTATE.s2_956                          ; mo:inst19|Selector38       ; yes                    ;
+; mo:inst19|NEXTSTATE.s4_900                          ; mo:inst19|Selector38       ; yes                    ;
+; mo:inst19|SEL_ACC[1]                                ; mo:inst19|WideOr21         ; yes                    ;
+; mo:inst19|SEL_ACC[0]                                ; mo:inst19|WideOr21         ; yes                    ;
+; mo:inst19|LOAD_BX                                   ; mo:inst19|PRESENTSTATE.s13 ; yes                    ;
+; mo:inst19|SEL_C[1]                                  ; mo:inst19|LOAD_CX          ; yes                    ;
+; mo:inst19|SEL_C[0]                                  ; mo:inst19|LOAD_CX          ; yes                    ;
+; mo:inst19|NEXTSTATE.s9_760                          ; mo:inst19|Selector38       ; yes                    ;
+; mo:inst19|NEXTSTATE.s11_704                         ; mo:inst19|Selector38       ; yes                    ;
+; mo:inst19|NEXTSTATE.s15_592                         ; mo:inst19|Selector38       ; yes                    ;
+; Number of user-specified and inferred latches = 34  ;                            ;                        ;
++-----------------------------------------------------+----------------------------+------------------------+
+Note: All latches listed above may not be present at the end of synthesis due to various synthesis optimizations.
+
+
++------------------------------------------------------------+
+; Registers Removed During Synthesis                         ;
++---------------------------------------+--------------------+
+; Register name                         ; Reason for Removal ;
++---------------------------------------+--------------------+
+; mainStore:inst|reg[7][0]~en           ; Lost fanout        ;
+; mainStore:inst|reg[7][1]~en           ; Lost fanout        ;
+; mainStore:inst|reg[7][2]~en           ; Lost fanout        ;
+; mainStore:inst|reg[7][3]~en           ; Lost fanout        ;
+; mainStore:inst|reg[7][4]~en           ; Lost fanout        ;
+; Total Number of Removed Registers = 5 ;                    ;
++---------------------------------------+--------------------+
+
+
++------------------------------------------------------+
+; General Register Statistics                          ;
++----------------------------------------------+-------+
+; Statistic                                    ; Value ;
++----------------------------------------------+-------+
+; Total registers                              ; 600   ;
+; Number of registers using Synchronous Clear  ; 0     ;
+; Number of registers using Synchronous Load   ; 32    ;
+; Number of registers using Asynchronous Clear ; 547   ;
+; Number of registers using Asynchronous Load  ; 0     ;
+; Number of registers using Clock Enable       ; 584   ;
+; Number of registers using Preset             ; 0     ;
++----------------------------------------------+-------+
+
+
++---------------------------------------------------+
+; Inverted Register Statistics                      ;
++-----------------------------------------+---------+
+; Inverted Register                       ; Fan out ;
++-----------------------------------------+---------+
+; mainStore:inst|reg[4][7]                ; 1       ;
+; mainStore:inst|reg[6][7]                ; 1       ;
+; mainStore:inst|reg[5][7]                ; 1       ;
+; mainStore:inst|reg[7][7]                ; 1       ;
+; mainStore:inst|reg[2][6]                ; 1       ;
+; mainStore:inst|reg[3][6]                ; 1       ;
+; mainStore:inst|reg[4][6]                ; 1       ;
+; mainStore:inst|reg[7][6]                ; 1       ;
+; mainStore:inst|reg[0][5]                ; 1       ;
+; mainStore:inst|reg[3][5]                ; 1       ;
+; mainStore:inst|reg[5][5]                ; 1       ;
+; mainStore:inst|reg[7][5]                ; 1       ;
+; mainStore:inst|reg[0][3]                ; 1       ;
+; mainStore:inst|reg[1][3]                ; 1       ;
+; mainStore:inst|reg[9][3]                ; 1       ;
+; mainStore:inst|reg[6][3]                ; 1       ;
+; mainStore:inst|reg[8][2]                ; 1       ;
+; mainStore:inst|reg[6][2]                ; 1       ;
+; mainStore:inst|reg[5][2]                ; 1       ;
+; mainStore:inst|reg[14][2]               ; 1       ;
+; mainStore:inst|reg[13][2]               ; 1       ;
+; mainStore:inst|reg[12][1]               ; 1       ;
+; mainStore:inst|reg[6][1]                ; 1       ;
+; mainStore:inst|reg[9][1]                ; 1       ;
+; mainStore:inst|reg[11][1]               ; 1       ;
+; mainStore:inst|reg[1][0]                ; 1       ;
+; mainStore:inst|reg[8][0]                ; 1       ;
+; mainStore:inst|reg[10][0]               ; 1       ;
+; mainStore:inst|reg[6][0]                ; 1       ;
+; mainStore:inst|reg[12][0]               ; 1       ;
+; mainStore:inst|reg[14][0]               ; 1       ;
+; Total number of inverted registers = 31 ;         ;
++-----------------------------------------+---------+
+
+
++--------------------------------------------------------------------------------------------------------------------------------------------------+
+; Multiplexer Restructuring Statistics (Restructuring Performed)                                                                                   ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+------------------------------------+
+; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output         ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+------------------------------------+
+; 3:1                ; 8 bits    ; 16 ALUTs      ; 8 ALUTs              ; 8 ALUTs                ; Yes        ; |main|pc:inst7|pc[0]               ;
+; 3:1                ; 8 bits    ; 16 ALUTs      ; 0 ALUTs              ; 16 ALUTs               ; Yes        ; |main|BX:inst8|Bx_output[6]        ;
+; 66:1               ; 8 bits    ; 352 ALUTs     ; 336 ALUTs            ; 16 ALUTs               ; Yes        ; |main|mainStore:inst|tempOutput[6] ;
+; 4:1                ; 9 bits    ; 18 ALUTs      ; 18 ALUTs             ; 0 ALUTs                ; No         ; |main|alu:inst12|Mux18             ;
+; 3:1                ; 2 bits    ; 4 ALUTs       ; 4 ALUTs              ; 0 ALUTs                ; No         ; |main|mo:inst19|NEXTSTATE.s7~1     ;
+; 4:1                ; 3 bits    ; 6 ALUTs       ; 6 ALUTs              ; 0 ALUTs                ; No         ; |main|zongxian:inst1|data[5]~28    ;
+; 8:1                ; 2 bits    ; 10 ALUTs      ; 4 ALUTs              ; 6 ALUTs                ; No         ; |main|mo:inst19|NEXTSTATE.s12~4    ;
+; 5:1                ; 5 bits    ; 15 ALUTs      ; 15 ALUTs             ; 0 ALUTs                ; No         ; |main|zongxian:inst1|data[4]~26    ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+------------------------------------+
+
+
++-------------------------------+
+; Analysis & Synthesis Messages ;
++-------------------------------+
+Info: *******************************************************************
+Info: Running Quartus II Analysis & Synthesis
+    Info: Version 7.2 Build 151 09/26/2007 SJ Full Version
+    Info: Processing started: Fri Dec 06 16:56:20 2019
+Info: Command: quartus_map --read_settings_files=on --write_settings_files=off BX -c BX
+Info: Found 2 design units, including 1 entities, in source file BX.vhd
+    Info: Found design unit 1: BX-BX_body
+    Info: Found entity 1: BX
+Info: Found 2 design units, including 1 entities, in source file CX.vhd
+    Info: Found design unit 1: ACC-ACC_body
+    Info: Found entity 1: ACC
+Info: Found 2 design units, including 1 entities, in source file MDR .vhd
+    Info: Found design unit 1: MDR-MDR_body
+    Info: Found entity 1: MDR
+Info: Found 2 design units, including 1 entities, in source file MAR.vhd
+    Info: Found design unit 1: MAR-MAR_body
+    Info: Found entity 1: MAR
+Info: Found 2 design units, including 1 entities, in source file ACC.vhd
+    Info: Found design unit 1: CX-CX_body
+    Info: Found entity 1: CX
+Info: Found 2 design units, including 1 entities, in source file zongxian.vhd
+    Info: Found design unit 1: zongxian-B
+    Info: Found entity 1: zongxian
+Info: Found 2 design units, including 1 entities, in source file IR.vhd
+    Info: Found design unit 1: ir-A
+    Info: Found entity 1: ir
+Info: Found 2 design units, including 1 entities, in source file Sel2_1.vhd
+    Info: Found design unit 1: Sel_Data-Sel2_1
+    Info: Found entity 1: Sel_Data
+Info: Found 2 design units, including 1 entities, in source file PC.vhd
+    Info: Found design unit 1: pc-A
+    Info: Found entity 1: pc
+Info: Found 2 design units, including 1 entities, in source file M.vhd
+    Info: Found design unit 1: mainStore-mainStore_body
+    Info: Found entity 1: mainStore
+Info: Found 2 design units, including 1 entities, in source file ALU.vhd
+    Info: Found design unit 1: alu-aluu
+    Info: Found entity 1: alu
+Info: Found 2 design units, including 1 entities, in source file weimingling.vhd
+    Info: Found design unit 1: weimingling-register_set_body
+    Info: Found entity 1: weimingling
+Info: Found 2 design units, including 1 entities, in source file kong.vhd
+    Info: Found design unit 1: forming_parts-forming_part_body
+    Info: Found entity 1: forming_parts
+Info: Found 2 design units, including 1 entities, in source file zuheluoji.vhd
+    Info: Found design unit 1: mo-A
+    Info: Found entity 1: mo
+Info: Found 1 design units, including 1 entities, in source file main.bdf
+    Info: Found entity 1: main
+Info: Found 2 design units, including 1 entities, in source file Sel_ACC .vhd
+    Info: Found design unit 1: Sel_ACC-Sel2_1
+    Info: Found entity 1: Sel_ACC
+Info: Found 2 design units, including 1 entities, in source file Sel_C.vhd
+    Info: Found design unit 1: Sel_C-Sel2_1
+    Info: Found entity 1: Sel_C
+Info: Found 2 design units, including 1 entities, in source file SEL_q.vhd
+    Info: Found design unit 1: Sel_Q-Sel2_1
+    Info: Found entity 1: Sel_Q
+Info: Found 1 design units, including 1 entities, in source file tiny.bdf
+    Info: Found entity 1: tiny
+Info: Found 2 design units, including 1 entities, in source file decode.vhd
+    Info: Found design unit 1: decode-A
+    Info: Found entity 1: decode
+Info: Elaborating entity "main" for the top level hierarchy
+Warning: Block or symbol "zongxian" of instance "inst1" overlaps another block or symbol
+Warning: Block or symbol "pc" of instance "inst7" overlaps another block or symbol
+Info: Elaborating entity "mo" for hierarchy "mo:inst19"
+Warning (10492): VHDL Process Statement warning at zuheluoji.vhd(34): signal "reset" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
+Warning (10492): VHDL Process Statement warning at zuheluoji.vhd(276): signal "PWBZ" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
+Warning (10631): VHDL Process Statement warning at zuheluoji.vhd(27): inferring latch(es) for signal or variable "NEXTSTATE", which holds its previous value in one or more paths through the process
+Warning (10631): VHDL Process Statement warning at zuheluoji.vhd(27): inferring latch(es) for signal or variable "LOAD_BX", which holds its previous value in one or more paths through the process
+Warning (10631): VHDL Process Statement warning at zuheluoji.vhd(27): inferring latch(es) for signal or variable "SEL_DATA", which holds its previous value in one or more paths through the process
+Warning (10631): VHDL Process Statement warning at zuheluoji.vhd(27): inferring latch(es) for signal or variable "SEL_C", which holds its previous value in one or more paths through the process
+Warning (10631): VHDL Process Statement warning at zuheluoji.vhd(27): inferring latch(es) for signal or variable "SEL_ACC", which holds its previous value in one or more paths through the process
+Warning (10631): VHDL Process Statement warning at zuheluoji.vhd(27): inferring latch(es) for signal or variable "SEL_Q", which holds its previous value in one or more paths through the process
+Warning (10631): VHDL Process Statement warning at zuheluoji.vhd(27): inferring latch(es) for signal or variable "ALUOP", which holds its previous value in one or more paths through the process
+Warning (10631): VHDL Process Statement warning at zuheluoji.vhd(27): inferring latch(es) for signal or variable "SEL_F", which holds its previous value in one or more paths through the process
+Warning (10034): Output port "SELM[1]" at zuheluoji.vhd(9) has no driver
+Warning (10034): Output port "SELM[0]" at zuheluoji.vhd(9) has no driver
+Info (10041): Inferred latch for "SEL_F[0]" at zuheluoji.vhd(27)
+Info (10041): Inferred latch for "SEL_F[1]" at zuheluoji.vhd(27)
+Info (10041): Inferred latch for "ALUOP[0]" at zuheluoji.vhd(27)
+Info (10041): Inferred latch for "ALUOP[1]" at zuheluoji.vhd(27)
+Info (10041): Inferred latch for "ALUOP[2]" at zuheluoji.vhd(27)
+Info (10041): Inferred latch for "ALUOP[3]" at zuheluoji.vhd(27)
+Info (10041): Inferred latch for "ALUOP[4]" at zuheluoji.vhd(27)
+Info (10041): Inferred latch for "SEL_Q[0]" at zuheluoji.vhd(27)
+Info (10041): Inferred latch for "SEL_Q[1]" at zuheluoji.vhd(27)
+Info (10041): Inferred latch for "SEL_ACC[0]" at zuheluoji.vhd(27)
+Info (10041): Inferred latch for "SEL_ACC[1]" at zuheluoji.vhd(27)
+Info (10041): Inferred latch for "SEL_C[0]" at zuheluoji.vhd(27)
+Info (10041): Inferred latch for "SEL_C[1]" at zuheluoji.vhd(27)
+Info (10041): Inferred latch for "SEL_DATA[0]" at zuheluoji.vhd(27)
+Info (10041): Inferred latch for "SEL_DATA[1]" at zuheluoji.vhd(27)
+Info (10041): Inferred latch for "LOAD_BX" at zuheluoji.vhd(27)
+Info (10041): Inferred latch for "NEXTSTATE.s15" at zuheluoji.vhd(27)
+Info (10041): Inferred latch for "NEXTSTATE.s14" at zuheluoji.vhd(27)
+Info (10041): Inferred latch for "NEXTSTATE.s13" at zuheluoji.vhd(27)
+Info (10041): Inferred latch for "NEXTSTATE.s12" at zuheluoji.vhd(27)
+Info (10041): Inferred latch for "NEXTSTATE.s11" at zuheluoji.vhd(27)
+Info (10041): Inferred latch for "NEXTSTATE.s10" at zuheluoji.vhd(27)
+Info (10041): Inferred latch for "NEXTSTATE.s9" at zuheluoji.vhd(27)
+Info (10041): Inferred latch for "NEXTSTATE.s8" at zuheluoji.vhd(27)
+Info (10041): Inferred latch for "NEXTSTATE.s7" at zuheluoji.vhd(27)
+Info (10041): Inferred latch for "NEXTSTATE.s6" at zuheluoji.vhd(27)
+Info (10041): Inferred latch for "NEXTSTATE.s5" at zuheluoji.vhd(27)
+Info (10041): Inferred latch for "NEXTSTATE.s4" at zuheluoji.vhd(27)
+Info (10041): Inferred latch for "NEXTSTATE.s3" at zuheluoji.vhd(27)
+Info (10041): Inferred latch for "NEXTSTATE.s2" at zuheluoji.vhd(27)
+Info (10041): Inferred latch for "NEXTSTATE.s1" at zuheluoji.vhd(27)
+Info (10041): Inferred latch for "NEXTSTATE.s0" at zuheluoji.vhd(27)
+Info: Elaborating entity "alu" for hierarchy "alu:inst12"
+Warning (10631): VHDL Process Statement warning at ALU.vhd(20): inferring latch(es) for signal or variable "result", which holds its previous value in one or more paths through the process
+Warning (10631): VHDL Process Statement warning at ALU.vhd(20): inferring latch(es) for signal or variable "c", which holds its previous value in one or more paths through the process
+Warning (10631): VHDL Process Statement warning at ALU.vhd(20): inferring latch(es) for signal or variable "o", which holds its previous value in one or more paths through the process
+Info (10041): Inferred latch for "o" at ALU.vhd(20)
+Info (10041): Inferred latch for "c" at ALU.vhd(20)
+Info (10041): Inferred latch for "result[0]" at ALU.vhd(20)
+Info (10041): Inferred latch for "result[1]" at ALU.vhd(20)
+Info (10041): Inferred latch for "result[2]" at ALU.vhd(20)
+Info (10041): Inferred latch for "result[3]" at ALU.vhd(20)
+Info (10041): Inferred latch for "result[4]" at ALU.vhd(20)
+Info (10041): Inferred latch for "result[5]" at ALU.vhd(20)
+Info (10041): Inferred latch for "result[6]" at ALU.vhd(20)
+Info (10041): Inferred latch for "result[7]" at ALU.vhd(20)
+Info (10041): Inferred latch for "result[8]" at ALU.vhd(20)
+Info: Elaborating entity "Sel_Q" for hierarchy "Sel_Q:inst15"
+Info: Elaborating entity "CX" for hierarchy "CX:inst13"
+Warning (10492): VHDL Process Statement warning at ACC.vhd(19): signal "clk" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
+Info: Elaborating entity "Sel_C" for hierarchy "Sel_C:inst14"
+Info: Elaborating entity "zongxian" for hierarchy "zongxian:inst1"
+Warning (10631): VHDL Process Statement warning at zongxian.vhd(14): inferring latch(es) for signal or variable "data", which holds its previous value in one or more paths through the process
+Info (10041): Inferred latch for "data[0]" at zongxian.vhd(14)
+Info (10041): Inferred latch for "data[1]" at zongxian.vhd(14)
+Info (10041): Inferred latch for "data[2]" at zongxian.vhd(14)
+Info (10041): Inferred latch for "data[3]" at zongxian.vhd(14)
+Info (10041): Inferred latch for "data[4]" at zongxian.vhd(14)
+Info (10041): Inferred latch for "data[5]" at zongxian.vhd(14)
+Info (10041): Inferred latch for "data[6]" at zongxian.vhd(14)
+Info (10041): Inferred latch for "data[7]" at zongxian.vhd(14)
+Info: Elaborating entity "ACC" for hierarchy "ACC:inst10"
+Warning (10492): VHDL Process Statement warning at CX.vhd(19): signal "clk" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
+Info: Elaborating entity "Sel_ACC" for hierarchy "Sel_ACC:inst11"
+Info: Elaborating entity "BX" for hierarchy "BX:inst8"
+Info: Elaborating entity "ir" for hierarchy "ir:inst9"
+Info: Elaborating entity "MDR" for hierarchy "MDR:inst5"
+Warning (10492): VHDL Process Statement warning at MDR .vhd(19): signal "clk" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
+Info: Elaborating entity "Sel_Data" for hierarchy "Sel_Data:inst4"
+Info: Elaborating entity "mainStore" for hierarchy "mainStore:inst"
+Info: Elaborating entity "MAR" for hierarchy "MAR:inst6"
+Warning (10492): VHDL Process Statement warning at MAR.vhd(19): signal "clk" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
+Info: Elaborating entity "pc" for hierarchy "pc:inst7"
+Warning (10492): VHDL Process Statement warning at PC.vhd(17): signal "reset" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
+Warning: Converted TRI buffer or tri-state bus to logic, or removed OPNDRN
+    Warning: Converting TRI node "mainStore:inst|reg[7][0]~1016" that feeds logic to a wire
+    Warning: Converting TRI node "mainStore:inst|reg[7][1]~1017" that feeds logic to a wire
+    Warning: Converting TRI node "mainStore:inst|reg[7][2]~1018" that feeds logic to a wire
+    Warning: Converting TRI node "mainStore:inst|reg[7][3]~1019" that feeds logic to a wire
+    Warning: Converting TRI node "mainStore:inst|reg[7][4]~1020" that feeds logic to a wire
+    Warning: Converting TRI node "Sel_Data:inst4|output[0]" that feeds logic to a wire
+    Warning: Converting TRI node "Sel_Data:inst4|output[1]" that feeds logic to a wire
+    Warning: Converting TRI node "Sel_Data:inst4|output[2]" that feeds logic to a wire
+    Warning: Converting TRI node "Sel_Data:inst4|output[3]" that feeds logic to a wire
+    Warning: Converting TRI node "Sel_Data:inst4|output[4]" that feeds logic to a wire
+    Warning: Converting TRI node "Sel_Data:inst4|output[5]" that feeds logic to a wire
+    Warning: Converting TRI node "Sel_Data:inst4|output[6]" that feeds logic to a wire
+    Warning: Converting TRI node "Sel_Data:inst4|output[7]" that feeds logic to a wire
+Warning: LATCH primitive "alu:inst12|result[0]" is permanently enabled
+Warning: LATCH primitive "alu:inst12|result[1]" is permanently enabled
+Warning: LATCH primitive "alu:inst12|result[2]" is permanently enabled
+Warning: LATCH primitive "alu:inst12|result[3]" is permanently enabled
+Warning: LATCH primitive "alu:inst12|result[4]" is permanently enabled
+Warning: LATCH primitive "alu:inst12|result[5]" is permanently enabled
+Warning: LATCH primitive "alu:inst12|result[6]" is permanently enabled
+Warning: LATCH primitive "alu:inst12|result[7]" is permanently enabled
+Warning: LATCH primitive "alu:inst12|result[8]" is permanently enabled
+Warning: LATCH primitive "alu:inst12|result[0]" is permanently enabled
+Warning: LATCH primitive "alu:inst12|result[1]" is permanently enabled
+Warning: LATCH primitive "alu:inst12|result[2]" is permanently enabled
+Warning: LATCH primitive "alu:inst12|result[3]" is permanently enabled
+Warning: LATCH primitive "alu:inst12|result[4]" is permanently enabled
+Warning: LATCH primitive "alu:inst12|result[5]" is permanently enabled
+Warning: LATCH primitive "alu:inst12|result[6]" is permanently enabled
+Warning: LATCH primitive "alu:inst12|result[7]" is permanently enabled
+Warning: LATCH primitive "alu:inst12|result[8]" is permanently enabled
+Info: State machine "|main|mo:inst19|PRESENTSTATE" contains 16 states
+Info: Selected Auto state machine encoding method for state machine "|main|mo:inst19|PRESENTSTATE"
+Info: Encoding result for state machine "|main|mo:inst19|PRESENTSTATE"
+    Info: Completed encoding using 16 state bits
+        Info: Encoded state bit "mo:inst19|PRESENTSTATE.s15"
+        Info: Encoded state bit "mo:inst19|PRESENTSTATE.s14"
+        Info: Encoded state bit "mo:inst19|PRESENTSTATE.s13"
+        Info: Encoded state bit "mo:inst19|PRESENTSTATE.s12"
+        Info: Encoded state bit "mo:inst19|PRESENTSTATE.s11"
+        Info: Encoded state bit "mo:inst19|PRESENTSTATE.s10"
+        Info: Encoded state bit "mo:inst19|PRESENTSTATE.s9"
+        Info: Encoded state bit "mo:inst19|PRESENTSTATE.s8"
+        Info: Encoded state bit "mo:inst19|PRESENTSTATE.s7"
+        Info: Encoded state bit "mo:inst19|PRESENTSTATE.s6"
+        Info: Encoded state bit "mo:inst19|PRESENTSTATE.s5"
+        Info: Encoded state bit "mo:inst19|PRESENTSTATE.s4"
+        Info: Encoded state bit "mo:inst19|PRESENTSTATE.s3"
+        Info: Encoded state bit "mo:inst19|PRESENTSTATE.s2"
+        Info: Encoded state bit "mo:inst19|PRESENTSTATE.s1"
+        Info: Encoded state bit "mo:inst19|PRESENTSTATE.s0"
+    Info: State "|main|mo:inst19|PRESENTSTATE.s0" uses code string "0000000000000000"
+    Info: State "|main|mo:inst19|PRESENTSTATE.s1" uses code string "0000000000000011"
+    Info: State "|main|mo:inst19|PRESENTSTATE.s2" uses code string "0000000000000101"
+    Info: State "|main|mo:inst19|PRESENTSTATE.s3" uses code string "0000000000001001"
+    Info: State "|main|mo:inst19|PRESENTSTATE.s4" uses code string "0000000000010001"
+    Info: State "|main|mo:inst19|PRESENTSTATE.s5" uses code string "0000000000100001"
+    Info: State "|main|mo:inst19|PRESENTSTATE.s6" uses code string "0000000001000001"
+    Info: State "|main|mo:inst19|PRESENTSTATE.s7" uses code string "0000000010000001"
+    Info: State "|main|mo:inst19|PRESENTSTATE.s8" uses code string "0000000100000001"
+    Info: State "|main|mo:inst19|PRESENTSTATE.s9" uses code string "0000001000000001"
+    Info: State "|main|mo:inst19|PRESENTSTATE.s10" uses code string "0000010000000001"
+    Info: State "|main|mo:inst19|PRESENTSTATE.s11" uses code string "0000100000000001"
+    Info: State "|main|mo:inst19|PRESENTSTATE.s12" uses code string "0001000000000001"
+    Info: State "|main|mo:inst19|PRESENTSTATE.s13" uses code string "0010000000000001"
+    Info: State "|main|mo:inst19|PRESENTSTATE.s14" uses code string "0100000000000001"
+    Info: State "|main|mo:inst19|PRESENTSTATE.s15" uses code string "1000000000000001"
+Warning: Removed always-enabled tri-state buffer Sel_Q:inst15|output[0]~65 feeding logic, open-drain buffer, or output pin
+Warning: Removed always-enabled tri-state buffer Sel_Q:inst15|output[1]~66 feeding logic, open-drain buffer, or output pin
+Warning: Removed always-enabled tri-state buffer Sel_Q:inst15|output[2]~67 feeding logic, open-drain buffer, or output pin
+Warning: Removed always-enabled tri-state buffer Sel_Q:inst15|output[3]~68 feeding logic, open-drain buffer, or output pin
+Warning: Removed always-enabled tri-state buffer Sel_Q:inst15|output[4]~69 feeding logic, open-drain buffer, or output pin
+Warning: Removed always-enabled tri-state buffer Sel_Q:inst15|output[5]~70 feeding logic, open-drain buffer, or output pin
+Warning: Removed always-enabled tri-state buffer Sel_Q:inst15|output[6]~71 feeding logic, open-drain buffer, or output pin
+Warning: Removed always-enabled tri-state buffer Sel_Q:inst15|output[7]~72 feeding logic, open-drain buffer, or output pin
+Warning: Removed always-enabled tri-state buffer alu:inst12|cout[7]~57 feeding logic, open-drain buffer, or output pin
+Warning: Removed always-enabled tri-state buffer alu:inst12|cout[7]~58 feeding logic, open-drain buffer, or output pin
+Warning: Removed always-enabled tri-state buffer alu:inst12|cout[6]~59 feeding logic, open-drain buffer, or output pin
+Warning: Removed always-enabled tri-state buffer alu:inst12|cout[6]~60 feeding logic, open-drain buffer, or output pin
+Warning: Removed always-enabled tri-state buffer alu:inst12|cout[5]~61 feeding logic, open-drain buffer, or output pin
+Warning: Removed always-enabled tri-state buffer alu:inst12|cout[5]~62 feeding logic, open-drain buffer, or output pin
+Warning: Removed always-enabled tri-state buffer alu:inst12|cout[4]~63 feeding logic, open-drain buffer, or output pin
+Warning: Removed always-enabled tri-state buffer alu:inst12|cout[4]~64 feeding logic, open-drain buffer, or output pin
+Warning: Removed always-enabled tri-state buffer alu:inst12|cout[3]~65 feeding logic, open-drain buffer, or output pin
+Warning: Removed always-enabled tri-state buffer alu:inst12|cout[3]~66 feeding logic, open-drain buffer, or output pin
+Warning: Removed always-enabled tri-state buffer alu:inst12|cout[2]~67 feeding logic, open-drain buffer, or output pin
+Warning: Removed always-enabled tri-state buffer alu:inst12|cout[2]~68 feeding logic, open-drain buffer, or output pin
+Warning: Removed always-enabled tri-state buffer alu:inst12|cout[1]~69 feeding logic, open-drain buffer, or output pin
+Warning: Removed always-enabled tri-state buffer alu:inst12|cout[1]~70 feeding logic, open-drain buffer, or output pin
+Warning: Removed always-enabled tri-state buffer alu:inst12|cout[0]~71 feeding logic, open-drain buffer, or output pin
+Warning: Removed always-enabled tri-state buffer alu:inst12|cout[0]~72 feeding logic, open-drain buffer, or output pin
+Warning: Converting TRI node "Sel_Q:inst15|output[0]" that feeds logic to an OR gate
+Warning: Converting TRI node "Sel_Q:inst15|output[1]" that feeds logic to an OR gate
+Warning: Converting TRI node "Sel_Q:inst15|output[2]" that feeds logic to an OR gate
+Warning: Converting TRI node "Sel_Q:inst15|output[3]" that feeds logic to an OR gate
+Warning: Converting TRI node "Sel_Q:inst15|output[4]" that feeds logic to an OR gate
+Warning: Converting TRI node "Sel_Q:inst15|output[5]" that feeds logic to an OR gate
+Warning: Converting TRI node "Sel_Q:inst15|output[6]" that feeds logic to an OR gate
+Warning: Converting TRI node "Sel_Q:inst15|output[7]" that feeds logic to an OR gate
+Warning: Converting TRI node "Sel_ACC:inst11|output[7]" that feeds logic to an OR gate
+Warning: Converting TRI node "Sel_ACC:inst11|output[6]" that feeds logic to an OR gate
+Warning: Converting TRI node "Sel_ACC:inst11|output[5]" that feeds logic to an OR gate
+Warning: Converting TRI node "Sel_ACC:inst11|output[4]" that feeds logic to an OR gate
+Warning: Converting TRI node "Sel_ACC:inst11|output[3]" that feeds logic to an OR gate
+Warning: Converting TRI node "Sel_ACC:inst11|output[2]" that feeds logic to an OR gate
+Warning: Converting TRI node "Sel_ACC:inst11|output[1]" that feeds logic to an OR gate
+Warning: Converting TRI node "Sel_ACC:inst11|output[0]" that feeds logic to an OR gate
+Warning: Converting TRI node "alu:inst12|cout[7]" that feeds logic to an OR gate
+Warning: Converting TRI node "alu:inst12|cout[6]" that feeds logic to an OR gate
+Warning: Converting TRI node "alu:inst12|cout[5]" that feeds logic to an OR gate
+Warning: Converting TRI node "alu:inst12|cout[4]" that feeds logic to an OR gate
+Warning: Converting TRI node "alu:inst12|cout[3]" that feeds logic to an OR gate
+Warning: Converting TRI node "alu:inst12|cout[2]" that feeds logic to an OR gate
+Warning: Converting TRI node "alu:inst12|cout[1]" that feeds logic to an OR gate
+Warning: Converting TRI node "alu:inst12|cout[0]" that feeds logic to an OR gate
+Warning: Converting TRI node "Sel_C:inst14|output[7]" that feeds logic to an OR gate
+Warning: Converting TRI node "Sel_C:inst14|output[6]" that feeds logic to an OR gate
+Warning: Converting TRI node "Sel_C:inst14|output[5]" that feeds logic to an OR gate
+Warning: Converting TRI node "Sel_C:inst14|output[4]" that feeds logic to an OR gate
+Warning: Converting TRI node "Sel_C:inst14|output[3]" that feeds logic to an OR gate
+Warning: Converting TRI node "Sel_C:inst14|output[2]" that feeds logic to an OR gate
+Warning: Converting TRI node "Sel_C:inst14|output[1]" that feeds logic to an OR gate
+Warning: Converting TRI node "Sel_C:inst14|output[0]" that feeds logic to an OR gate
+Info: Duplicate LATCH primitives merged into single LATCH primitive
+    Info: Duplicate LATCH primitive "mo:inst19|ALUOP[0]" merged with LATCH primitive "mo:inst19|ALUOP[1]"
+Warning: Latch mo:inst19|ALUOP[1] has unsafe behavior
+    Warning: Ports D and ENA on the latch are fed by the same signal mo:inst19|PRESENTSTATE.s13
+Warning: Latch mo:inst19|SEL_Q[1] has unsafe behavior
+    Warning: Ports D and ENA on the latch are fed by the same signal mo:inst19|PRESENTSTATE.s13
+Warning: Latch zongxian:inst1|data[7] has unsafe behavior
+    Warning: Ports D and ENA on the latch are fed by the same signal mo:inst19|PRESENTSTATE.s6
+Warning: Latch zongxian:inst1|data[6] has unsafe behavior
+    Warning: Ports D and ENA on the latch are fed by the same signal mo:inst19|PRESENTSTATE.s6
+Warning: Latch zongxian:inst1|data[5] has unsafe behavior
+    Warning: Ports D and ENA on the latch are fed by the same signal mo:inst19|PRESENTSTATE.s6
+Warning: Latch zongxian:inst1|data[4] has unsafe behavior
+    Warning: Ports D and ENA on the latch are fed by the same signal mo:inst19|PRESENTSTATE.s3
+Warning: Latch zongxian:inst1|data[3] has unsafe behavior
+    Warning: Ports D and ENA on the latch are fed by the same signal mo:inst19|PRESENTSTATE.s3
+Warning: Latch zongxian:inst1|data[2] has unsafe behavior
+    Warning: Ports D and ENA on the latch are fed by the same signal mo:inst19|PRESENTSTATE.s3
+Warning: Latch zongxian:inst1|data[1] has unsafe behavior
+    Warning: Ports D and ENA on the latch are fed by the same signal mo:inst19|PRESENTSTATE.s3
+Warning: Latch zongxian:inst1|data[0] has unsafe behavior
+    Warning: Ports D and ENA on the latch are fed by the same signal mo:inst19|PRESENTSTATE.s3
+Warning: Latch mo:inst19|SEL_DATA[1] has unsafe behavior
+    Warning: Ports D and ENA on the latch are fed by the same signal mo:inst19|PRESENTSTATE.s10
+Warning: Latch mo:inst19|SEL_DATA[0] has unsafe behavior
+    Warning: Ports D and ENA on the latch are fed by the same signal mo:inst19|PRESENTSTATE.s10
+Warning: Latch mo:inst19|NEXTSTATE.s3_928 has unsafe behavior
+    Warning: Ports D and ENA on the latch are fed by the same signal mo:inst19|PRESENTSTATE.s2
+Warning: Latch mo:inst19|NEXTSTATE.s6_844 has unsafe behavior
+    Warning: Ports D and ENA on the latch are fed by the same signal mo:inst19|PRESENTSTATE.s2
+Warning: Latch mo:inst19|NEXTSTATE.s14_620 has unsafe behavior
+    Warning: Ports D and ENA on the latch are fed by the same signal ir:inst9|command[2]
+Warning: Latch mo:inst19|NEXTSTATE.s7_816 has unsafe behavior
+    Warning: Ports D and ENA on the latch are fed by the same signal mo:inst19|PRESENTSTATE.s14
+Warning: Latch mo:inst19|NEXTSTATE.s8_788 has unsafe behavior
+    Warning: Ports D and ENA on the latch are fed by the same signal mo:inst19|PRESENTSTATE.s14
+Warning: Latch mo:inst19|NEXTSTATE.s10_732 has unsafe behavior
+    Warning: Ports D and ENA on the latch are fed by the same signal ir:inst9|command[2]
+Warning: Latch mo:inst19|NEXTSTATE.s5_872 has unsafe behavior
+    Warning: Ports D and ENA on the latch are fed by the same signal mo:inst19|PRESENTSTATE.s14
+Warning: Latch mo:inst19|NEXTSTATE.s13_648 has unsafe behavior
+    Warning: Ports D and ENA on the latch are fed by the same signal mo:inst19|PRESENTSTATE.s2
+Warning: Latch mo:inst19|NEXTSTATE.s12_676 has unsafe behavior
+    Warning: Ports D and ENA on the latch are fed by the same signal mo:inst19|PRESENTSTATE.s2
+Warning: Latch mo:inst19|NEXTSTATE.s4_900 has unsafe behavior
+    Warning: Ports D and ENA on the latch are fed by the same signal mo:inst19|PRESENTSTATE.s14
+Warning: Latch mo:inst19|SEL_ACC[1] has unsafe behavior
+    Warning: Ports D and ENA on the latch are fed by the same signal mo:inst19|PRESENTSTATE.s8
+Warning: Latch mo:inst19|SEL_ACC[0] has unsafe behavior
+    Warning: Ports D and ENA on the latch are fed by the same signal mo:inst19|PRESENTSTATE.s8
+Warning: Latch mo:inst19|SEL_C[1] has unsafe behavior
+    Warning: Ports D and ENA on the latch are fed by the same signal mo:inst19|PRESENTSTATE.s13
+Warning: Latch mo:inst19|SEL_C[0] has unsafe behavior
+    Warning: Ports D and ENA on the latch are fed by the same signal mo:inst19|PRESENTSTATE.s13
+Warning: Output pins are stuck at VCC or GND
+    Warning (13410): Pin "con[0]" stuck at VCC
+Info: Registers with preset signals will power-up high
+Info: 5 registers lost all their fanouts during netlist optimizations. The first 5 are displayed below.
+    Info: Register "mainStore:inst|reg[7][0]~en" lost all its fanouts during netlist optimizations.
+    Info: Register "mainStore:inst|reg[7][1]~en" lost all its fanouts during netlist optimizations.
+    Info: Register "mainStore:inst|reg[7][2]~en" lost all its fanouts during netlist optimizations.
+    Info: Register "mainStore:inst|reg[7][3]~en" lost all its fanouts during netlist optimizations.
+    Info: Register "mainStore:inst|reg[7][4]~en" lost all its fanouts during netlist optimizations.
+Info: Implemented 1125 device resources after synthesis - the final resource count might be different
+    Info: Implemented 2 input pins
+    Info: Implemented 141 output pins
+    Info: Implemented 982 logic cells
+Info: Quartus II Analysis & Synthesis was successful. 0 errors, 165 warnings
+    Info: Allocated 233 megabytes of memory during processing
+    Info: Processing ended: Fri Dec 06 16:56:24 2019
+    Info: Elapsed time: 00:00:04
+
+
